@@ -80,48 +80,41 @@ class PersonWithGettersSetters {
         return this.#name;
     }
 
-    get alias() {
-        return this.#alias;
-    }
-}
-
-
-
-// 8. Modifica la clase con getters y setters para que use propiedades privadas
-
-class PersonWithPrivateProperties {
-    #name;
-    #age;
-    #alias;
-    constructor(name, age, alias) {
-        this.#name = name;
-        this.#age = age;
-        this.#alias = alias;
-    }
-    get name() {
-        return this.#name;
-    }
-    set name(newName) {
-        this.#name = newName;
-    }
-    get age() {
-        return this.#age;
-    }
-    set age(newAge) {
-        this.#age = newAge;
-    }
-    get alias() {
-        return this.#alias;
-    }
     set alias(newAlias) {
         this.#alias = newAlias;
     }
 }
-const person2 = new PersonWithPrivateProperties("Oscar", 31, "Caonabo");
-console.log(person2.name); 
+// Creamos una instancia de la clase PersonWithGettersSetters
+const person2 = new PersonWithGettersSetters("Oscar", 31, "Oscardev");
+
+
+// 8. Modifica la clase con getters y setters para que use propiedades privadas
+
+person2.alias = "LaPampara"; // Usando el setter
+// person2.name = "Andrés"; // Esto no funcionará porque name no tiene setter
 
 // 9. Utiliza los get y set y muestra sus valores
 
-
+console.log(person2.name); // Oscar
+console.log(person2.alias); // Oscardev
+console.log(person2.age); // 31
 
 // 10. Sobrescribe un método de una clase que utilice herencia 
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    sound() {
+        console.log("El animal emite un sonido genérico");
+    }
+}
+
+class Dog extends Animal {
+    sound() {
+        console.log(`${this.name} ladra: ¡Guau!`);
+    }
+}           
+const myDog = new Dog("Rex");
+myDog.sound(); // Rex ladra: ¡Guau!
