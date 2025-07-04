@@ -7,7 +7,7 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=14146
 
 // 1. Crea una función que reciba dos números y devuelva su suma
 
-function sum(a, b) {
+export function sum(a, b) {
     return a + b;   
 }
 console.log('Suma de 5 + 10' + ' = ' + sum(5, 10)); 
