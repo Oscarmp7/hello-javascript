@@ -213,6 +213,3 @@ const emailUserMap = new Map(emailUserPairs);
 emailUserMap.forEach((usuario, email) => {
   console.log(`✉️ ${email} → ${usuario.nombre}, ${usuario.edad} años`)
 });
-
-
-
